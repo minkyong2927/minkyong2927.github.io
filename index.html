@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minkyeong Kim — Portfolio</title>
+<meta name="description" content="Full-stack and applied AI engineer. Built and operates an HR review platform for ~500 employees; two-time Grand Prize winner in ML projects.">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f6f7f9; --text:#16181d; --muted:#5b6170; --line:#e3e6eb;
+  --accent:#4a3aa7; --accent-soft:#ece9fb; --ok:#1f7a4d;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121317; --surface:#1b1d23; --text:#eceef2; --muted:#a3a9b6; --line:#2c2f37;
+    --accent:#a79df0; --accent-soft:#25213f; --ok:#5ccf98;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121317; --surface:#1b1d23; --text:#eceef2; --muted:#a3a9b6; --line:#2c2f37;
+  --accent:#a79df0; --accent-soft:#25213f; --ok:#5ccf98;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
+h1{font-size:2.1rem;line-height:1.2;margin:0 0 6px}
+.role{color:var(--accent);font-weight:600;margin:0 0 14px}
+.lead{max-width:680px;color:var(--muted);margin:0 0 18px}
+.contact{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.95rem}
+.contact a{color:var(--text)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.stat b{display:block;font-size:1.45rem;color:var(--accent)}
+.stat span{font-size:.85rem;color:var(--muted)}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+h2{font-size:1.35rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 18px;font-size:.95rem}
+h3{font-size:1.02rem;margin:22px 0 8px}
+ul{margin:0;padding-left:20px}
+li{margin:4px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.tag{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 10px;font-size:.82rem;font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{margin-top:0}
+.badge{display:inline-block;border:1px solid var(--ok);color:var(--ok);border-radius:6px;padding:0 8px;font-size:.8rem;font-weight:700;margin-left:6px;vertical-align:middle}
+figure{margin:18px 0 0}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+svg text{fill:var(--text);font:13px system-ui,sans-serif}
+svg .box{fill:var(--surface);stroke:var(--line)}
+svg .hl{fill:var(--accent-soft);stroke:var(--accent)}
+svg .arrow{stroke:var(--muted);stroke-width:1.5;fill:none;marker-end:url(#ah)}
+svg .small{font-size:11px;fill:var(--muted)}
+.bar{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}
+.bar .lbl{width:170px;flex:none;color:var(--muted)}
+.bar .track{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:6px;height:18px;position:relative}
+.bar .fill{height:100%;background:var(--accent);border-radius:5px}
+.bar .val{width:60px;text-align:right;font-variant-numeric:tabular-nums}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
+@media (max-width:640px){
+  h1{font-size:1.7rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid2{grid-template-columns:1fr}
+  .bar .lbl{width:110px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Minkyeong Kim</h1>
+  <p class="role">Full-Stack &amp; Applied AI Engineer</p>
+  <p class="lead">I build software that real users depend on. As the sole developer, I designed, shipped, and now operate an HR performance review platform used by about 500 employees, integrated with Microsoft enterprise identity and deployed on managed cloud. Before that, I won the Grand Prize twice for machine learning projects.</p>
+  <div class="contact">
+    <span>Seoul, South Korea</span>
+    <a href="mailto:minkyong2927@gmail.com">minkyong2927@gmail.com</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>~500</b><span>employees on the platform</span></div>
+    <div class="stat"><b>97%</b><span>lower cost than the SaaS it replaced</span></div>
+    <div class="stat"><b>3 months</b><span>from manuals to company-wide launch</span></div>
+    <div class="stat"><b>2×</b><span>Grand Prize, ML projects</span></div>
+  </div>
+</header>
+
+<section>
+  <h2>ESTimate — HR Performance Review Platform</h2>
+  <p class="sub">ESTsoft · Sole developer (requirements, build, deploy, operate) · Jul 2026 – present</p>
+  <p>ESTimate runs peer reviews, leadership reviews, self-assessments, and final grading for the company. There was no product spec: I turned two HR policy manuals into a functional specification, built the system, and launched it company-wide in three months. It replaced a per-seat commercial SaaS.</p>
+
+  <figure>
+    <svg viewBox="0 0 820 230" width="100%" role="img" aria-label="ESTimate architecture: users sign in through Microsoft Entra ID or Google, use a React single-page app served by a Node.js Express API, which stores data in PostgreSQL and calls the OpenAI API. Separate QA and production environments.">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor" style="color:var(--muted)"/></marker></defs>
+      <rect class="box" x="10" y="85" width="120" height="56" rx="8"/><text x="70" y="110" text-anchor="middle">Employees</text><text class="small" x="70" y="127" text-anchor="middle">browser · mobile</text>
+      <rect class="box" x="180" y="10" width="160" height="56" rx="8"/><text x="260" y="34" text-anchor="middle">Microsoft Entra ID</text><text class="small" x="260" y="51" text-anchor="middle">+ Google Workspace SSO</text>
+      <rect class="hl" x="180" y="85" width="160" height="56" rx="8"/><text x="260" y="110" text-anchor="middle">React + TypeScript</text><text class="small" x="260" y="127" text-anchor="middle">49 screens · SPA</text>
+      <rect class="hl" x="390" y="85" width="170" height="56" rx="8"/><text x="475" y="110" text-anchor="middle">Node.js · Express API</text><text class="small" x="475" y="127" text-anchor="middle">45 REST endpoints · RBAC</text>
+      <rect class="box" x="610" y="40" width="190" height="56" rx="8"/><text x="705" y="64" text-anchor="middle">PostgreSQL (Prisma)</text><text class="small" x="705" y="81" text-anchor="middle">audit log · change history</text>
+      <rect class="box" x="610" y="130" width="190" height="56" rx="8"/><text x="705" y="154" text-anchor="middle">OpenAI API</text><text class="small" x="705" y="171" text-anchor="middle">server-side only · guarded</text>
+      <path class="arrow" d="M130 113 H176"/>
+      <path class="arrow" d="M130 100 C150 60 160 40 176 38"/>
+      <path class="arrow" d="M340 113 H386"/>
+      <path class="arrow" d="M560 105 C585 90 590 72 606 68"/>
+      <path class="arrow" d="M560 121 C585 136 590 154 606 158"/>
+      <text class="small" x="390" y="182">QA and production run as separate services and databases;</text>
+      <text class="small" x="390" y="198">PR merge triggers deploy, followed by a health check.</text>
+    </svg>
+    <figcaption>System overview. Hosted on a managed PaaS (Render) with separate QA and production stacks.</figcaption>
+  </figure>
+
+  <h3>What I built</h3>
+  <ul>
+    <li>Full review lifecycle: reviewer nomination → leader approval → writing → grading, plus export to the HR team's existing Excel formats.</li>
+    <li>Roster ingestion from Excel that maps org chart, dual roles, and affiliates, and decides who is eligible for review.</li>
+    <li>Admin console with change history, data checks, and an audit log of every admin action.</li>
+  </ul>
+
+  <h3>Enterprise integration &amp; security</h3>
+  <ul>
+    <li>Single sign-on with Microsoft Entra ID and Google Workspace (OAuth 2.0 / OIDC), with a switch to enforce SSO-only at launch.</li>
+    <li>TOTP two-factor authentication for administrators, Content Security Policy, and role-based access for employees, leaders, and HR admins.</li>
+    <li>Handled a reported exposure of roster data in the public JavaScript bundle: removed it from the client build and added a rule that no real data lives in front-end source.</li>
+  </ul>
+
+  <h3>Reliability &amp; operations</h3>
+  <ul>
+    <li>Load-tested with k6 and found that saving whole arrays crashed PostgreSQL with out-of-memory errors; redesigned storage to row-level records. 300 concurrent submissions now complete in 0.73 s.</li>
+    <li>Automated a 10-stage end-to-end scenario with Playwright; caught 27 issues before launch.</li>
+    <li>Collected front-end and server errors automatically and shipped same-day fixes for user reports, including a browser storage quota overflow and a request-size limit that had silently dropped approved tasks (all records restored).</li>
+    <li>Wrote consistency-check scripts that compare nominations against writing tasks after every deploy.</li>
+  </ul>
+
+  <h3>Applied AI with guardrails</h3>
+  <div class="grid2">
+    <div class="card">
+      <h3>Anonymous review summaries</h3>
+      <p>Raw comments can reveal who wrote them. The server rewrites them into strengths, areas to improve, and suggestions; only the summary reaches the browser.</p>
+      <ul>
+        <li>Post-checks for copied phrases (18+ chars) and real names → one regeneration → removal if still present</li>
+        <li>Minimum response counts enforced in code</li>
+        <li>1,385 responses → 206 reports</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Writing assist &amp; template import</h3>
+      <p>Polishes self-assessment drafts and turns free-form Excel templates into structured JSON for the template editor.</p>
+      <ul>
+        <li>Server-side calls only, per-review rate limits</li>
+        <li>Response validation before saving</li>
+        <li>Environment kill switch and error logging</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:14px">Lesson: an LLM feature is production-ready only when its checks, limits, and off switch are designed together with it. Where an LLM did not fit (reviewer recommendation, anonymity), I used rules and server-side processing instead.</p>
+
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">Entra ID</span><span class="tag">OAuth 2.0 / OIDC</span><span class="tag">OpenAI API</span><span class="tag">k6</span><span class="tag">Playwright</span><span class="tag">CI/CD</span>
+  </div>
+</section>
+
+<section>
+  <h2>Boost up — Peer Recognition App for Microsoft Teams</h2>
+  <p class="sub">ESTsoft · Sole developer · Jul – Sep 2026</p>
+  <ul>
+    <li>Teams tab app where employees post contribution cards, browse a public feed, and leaders view their team.</li>
+    <li>Teams SSO via Entra ID (custom API scope, pre-authorized Teams clients) and Microsoft Graph for people search.</li>
+    <li>Deployed on Azure App Service with Azure Database for PostgreSQL behind a company domain and TLS certificate; secrets injected through app settings.</li>
+    <li>Imported a 700-person org chart keyed by Entra object ID so the data can join with other internal systems.</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">Microsoft Teams</span><span class="tag">Microsoft Graph</span><span class="tag">Azure App Service</span><span class="tag">Azure PostgreSQL</span><span class="tag">React</span><span class="tag">Express</span>
+  </div>
+</section>
+
+<section>
+  <h2>FGAI — Facial Emotion Recognition for Focus Groups <span class="badge">Grand Prize</span></h2>
+  <p class="sub">ESTsoft AI Developer Program (K-Digital Training) · Final team project · Jan 2026</p>
+  <p>In a focus group interview, one moderator watches several people at once, can miss reactions, and judges them subjectively. I proposed reading each participant's facial expressions with AI to surface their real reactions, and named and scoped the project.</p>
+  <h3>Modeling</h3>
+  <p>Faces in focus groups are mostly subtle or neutral, so a single model struggled to separate four classes (anger, happy, panic, sadness). We compared about 15 image classifiers and combined the top models with complementary strengths.</p>
+  <div role="img" aria-label="Accuracy by ensemble strategy">
+    <div class="bar"><span class="lbl">Soft voting (10)</span><span class="track"><span class="fill" style="width:89.11%"></span></span><span class="val">89.11%</span></div>
+    <div class="bar"><span class="lbl">Weighted voting</span><span class="track"><span class="fill" style="width:89.40%"></span></span><span class="val">89.40%</span></div>
+    <div class="bar"><span class="lbl">Top-5 ensemble</span><span class="track"><span class="fill" style="width:89.83%"></span></span><span class="val">89.83%</span></div>
+    <div class="bar"><span class="lbl"><b>Top-3 ensemble</b></span><span class="track"><span class="fill" style="width:90.54%"></span></span><span class="val"><b>90.54%</b></span></div>
+  </div>
+  <p class="sub" style="margin-top:6px">Final: ConvNeXt + EfficientNetV2 + MaxViT · F1 0.9053 · ROC AUC 0.9805 · +1.28 pp over the best single model</p>
+  <h3>Real-time dashboard (built solo)</h3>
+  <p>Webcam frame → compress and base64-encode → server → MediaPipe face detection → crop to 224 px → ensemble inference (averaged logits) → probabilities, face box, and session stats (count, average, latency) rendered in Streamlit.</p>
+  <div class="tags">
+    <span class="tag">PyTorch</span><span class="tag">ConvNeXt</span><span class="tag">EfficientNetV2</span><span class="tag">MaxViT</span><span class="tag">MediaPipe</span><span class="tag">Streamlit</span>
+  </div>
+</section>
+
+<section>
+  <h2>UVA Radiation Forecasting <span class="badge">Grand Prize</span></h2>
+  <p class="sub">ESTsoft AI Developer Program (K-Digital Training) · Team project · 2025</p>
+  <p>Forecasts next-day UVA levels from weather, solar, atmospheric, and radiation data, for use cases like UV alerts and outdoor-activity guidance.</p>
+  <ul>
+    <li>Collected and merged public weather and air-quality data; filled gaps with time-based interpolation.</li>
+    <li>EDA showed strong seasonality (peak in June–July) and high correlation with solar radiation, which guided feature design.</li>
+    <li>Moved from univariate models (Prophet, ARIMA, LSTM) to multivariate (Random Forest, XGBoost, LSTM), then stacked XGBoost + LSTM.</li>
+    <li>Result: out-of-fold R² 0.7541, MAE 0.1427, RMSE 0.1977.</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">XGBoost</span><span class="tag">LSTM</span><span class="tag">Stacking</span><span class="tag">Time series</span>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="grid2">
+    <div class="card"><h3>Languages &amp; Web</h3>Python, TypeScript, JavaScript, SQL · React, Vite, Tailwind CSS · Node.js, Express, REST APIs, Prisma</div>
+    <div class="card"><h3>Cloud &amp; Operations</h3>Azure App Service, Azure Database for PostgreSQL, Render · Git/GitHub, CI/CD, QA/production separation · k6, Playwright</div>
+    <div class="card"><h3>Identity &amp; Security</h3>Microsoft Entra ID, Microsoft Graph, Teams SSO · OAuth 2.0 / OIDC · TOTP 2FA, RBAC, audit logging, CSP</div>
+    <div class="card"><h3>AI / ML</h3>OpenAI API with guardrails · PyTorch, scikit-learn, pandas · XGBoost, LSTM, ensembles · MediaPipe, Streamlit</div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <ul>
+    <li><b>Konkuk University</b> — B.Eng., Mechanical and Electronic Engineering · Feb 2019 – Aug 2021</li>
+    <li><b>ESTsoft AI Developer Program (K-Digital Training)</b> — Grand Prize ×2 · May 2025 – Jan 2026</li>
+  </ul>
+</section>
+
+<footer>Minkyeong Kim · minkyong2927@gmail.com</footer>
+</div>
+</body>
+</html>
