@@ -175,6 +175,40 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
 </section>
 
 <section>
+  <h2>SQL Agent — Ask Business Data in Plain Language</h2>
+  <p class="sub">Personal project · Oct 2026 · <a href="https://github.com/minkyong2927/sql-agent">github.com/minkyong2927/sql-agent</a></p>
+  <p>An operations team asks a question in plain language ("How many gift payouts are overdue, and for how much?"). A Claude agent writes DuckDB SQL through a tool, runs it, and answers only from the result. The data is a synthetic model of a telecom and rental sign-up broker: 11 tables covering customers, consultations, applications, installations, gift payouts, and cancellations.</p>
+
+  <h3>Guardrails in layers</h3>
+  <ul>
+    <li>Every query is parsed with sqlglot before it runs: one statement, read queries only, no DELETE / DROP / COPY / ATTACH / SET, and an allow-list of tables that also blocks file-reading functions such as <code>read_csv('…/.env')</code>.</li>
+    <li>The database opens read-only with external access disabled, so a missed check still cannot write or read local files.</li>
+    <li>Row limits, a cap on SQL calls per question, and SQL errors returned to the model so it can fix its own query.</li>
+  </ul>
+
+  <h3>Evaluation-driven iteration</h3>
+  <p>A 40-question set (easy → trap questions such as double counting after a join, people vs. rows, and questions the data cannot answer) graded two ways: does the answer contain the right values, and did those values come from an executed query?</p>
+  <div role="img" aria-label="Share of answers backed by executed SQL, before and after the prompt change">
+    <div class="bar"><span class="lbl">Baseline</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="val">27/30</span></div>
+    <div class="bar"><span class="lbl"><b>+ "compute in SQL" rule</b></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val"><b>30/30</b></span></div>
+  </div>
+  <p class="sub" style="margin-top:6px">Answers backed by executed SQL (Claude Opus). The 3 misses were ratios the model calculated itself; one prompt rule fixed them.</p>
+  <ul>
+    <li>Claude Haiku matched Opus on all 40 questions at about 1/40 of the cost ($0.02 vs $0.80 per 30-question run).</li>
+    <li>Reading failures instead of trusting the score found two bugs of my own: an unhandled tokenizer error in the SQL guard, and an off-by-one date boundary in one reference answer.</li>
+  </ul>
+
+  <h3>Delivery</h3>
+  <ul>
+    <li>FastAPI service (<code>POST /ask</code>, health check, demo page) with input validation and model allow-list.</li>
+    <li>GitHub Actions runs the guard, API, and grader tests on every push with the LLM mocked, so CI costs nothing.</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">Claude API</span><span class="tag">Tool use</span><span class="tag">DuckDB</span><span class="tag">sqlglot</span><span class="tag">FastAPI</span><span class="tag">LLM evaluation</span><span class="tag">GitHub Actions</span><span class="tag">Python</span>
+  </div>
+</section>
+
+<section>
   <h2>FGAI — Facial Emotion Recognition for Focus Groups <span class="badge">Grand Prize</span></h2>
   <p class="sub">ESTsoft AI Developer Program (K-Digital Training) · Final team project · Jan 2026</p>
   <p>In a focus group interview, one moderator watches several people at once, can miss reactions, and judges them subjectively. I proposed reading each participant's facial expressions with AI to surface their real reactions, and named and scoped the project.</p>
@@ -215,7 +249,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <div class="card"><h3>Languages &amp; Web</h3>Python, TypeScript, JavaScript, SQL · React, Vite, Tailwind CSS · Node.js, Express, REST APIs, Prisma</div>
     <div class="card"><h3>Cloud &amp; Operations</h3>Azure App Service, Azure Database for PostgreSQL, Render · Git/GitHub, CI/CD, QA/production separation · k6, Playwright</div>
     <div class="card"><h3>Identity &amp; Security</h3>Microsoft Entra ID, Microsoft Graph, Teams SSO · OAuth 2.0 / OIDC · TOTP 2FA, RBAC, audit logging, CSP</div>
-    <div class="card"><h3>AI / ML</h3>OpenAI API with guardrails · PyTorch, scikit-learn, pandas · XGBoost, LSTM, ensembles · MediaPipe, Streamlit</div>
+    <div class="card"><h3>AI / ML</h3>Claude API (tool use, agent loop), OpenAI API with guardrails · LLM evaluation sets · FastAPI, DuckDB, sqlglot · PyTorch, scikit-learn, pandas · XGBoost, LSTM, ensembles · MediaPipe, Streamlit</div>
   </div>
 </section>
 
